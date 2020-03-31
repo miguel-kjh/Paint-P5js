@@ -12,7 +12,7 @@ function setup() {
 }
   
 function draw() {
-    background(220);
+    background(chooseColor($("#background").val()));
     paintMark();
     paint();
 }
@@ -59,15 +59,18 @@ function mouseDragged(){
     console.log("dejar");
 }*/
 
-function chooseColor() {
-    string = $("#colors").val();
+function chooseColor(string) {
     switch (string) {
         case "green":
-            return color(40, 227, 37);
+            return color(40,227,37);
         case "blue":
-            return color( 7, 143, 243 );
+            return color(7,143,243);
         case "red":
-            return color( 228, 29, 29 );
+            return color(228,29,29);
+        case "white":
+            return color(255,255,255);
+        case "gray":
+            return color(220);
         default:
             return color(0);
     }
@@ -79,6 +82,6 @@ $(document).ready(function(){
     });
 
     $("select").change(function () { 
-        paintColor = chooseColor()    
+        paintColor = chooseColor($("#colors").val())    
     });
 });  
