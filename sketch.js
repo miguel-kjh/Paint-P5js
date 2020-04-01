@@ -1,13 +1,11 @@
 const x = 1000;
 const y = 1000;
-const radius = 30;
 
 let drawings;
 let rubberPoints;
 let thickness;
 let paintColor;
 let rubber;
-let radiusRubber;
 
 function setup() {
     createCanvas(x, y);
@@ -16,8 +14,6 @@ function setup() {
     paintColor     = chooseColor();
     thickness      = $("#sliderWidth").val();
     rubber         = false;
-    radiusRubber   = Math.pow(radius,2);
-    console.log(radiusRubber);
 }
   
 function draw() {
@@ -37,23 +33,41 @@ function paintMark() {
     point(mouseX, mouseY);
 }
 
+function isIntersection(ax,ay,bx,by,cx,cy,dx,dy) {
+    firstGrade  = (by-ay)/(bx-ax);
+    secondGrade = (dy-cy)/(dx-cx);
+    if (firstGrade == secondGrade) {
+        return false;
+    }
+    firstCte  = -(firstGrade*ax)  + ay;
+    secondCte = -(secondGrade*cx) + cy;
+
+    mid    = firstGrade-secondGrade; 
+    pointx = (secondCte-firstCte)/mid;
+    pointy = ((firstGrade*secondCte) - (secondGrade*firstCte))/mid;
+
+    return cx <= pointx && cy <= pointy && pointx <= dx && pointy <= dy 
+}
+
 function clearFigure() {
-    rubberPoints.forEach(point => {
-        drawings.forEach(element => {
-            for (const elementPoint of element.points) {
-                console.log(
-                    Math.pow((point[0] + elementPoint[0]),2)+ Math.pow((point[1] - elementPoint[1]),2)
-                );
-                if (
-                  Math.pow((point[0] + elementPoint[0]),2) 
-                + Math.pow((point[1] - elementPoint[1]),2) 
-                == radiusRubber) {
+    drawings.forEach(element => {
+        for (let index = 0; index < element.points.length-1; index++) {
+            console.log(element.delete);
+            if(element.delete) break;
+            const point = element.points[index];
+            const nextPoint = element.points[index+1];
+            for (let indexRubber = 0; indexRubber < rubberPoints.length-1; indexRubber++) {
+                const rubberPoint = rubberPoints[indexRubber];
+                const nextRubberPoint = rubberPoints[indexRubber+1];
+                if(isIntersection(
+                    rubberPoint[0],rubberPoint[1],nextRubberPoint[0],nextRubberPoint[1],
+                    point[0],point[1],nextPoint[0],nextPoint[1]
+                )){
                     element.delete = true;
-                    console.log("coincede");
                     break;
                 }
             }
-        });
+        }
     });
 }
 
