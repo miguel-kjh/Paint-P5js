@@ -68,6 +68,14 @@ function keyPressed(){
     if(key == "a" || key == "A"){
         drawings = [];
     }
+
+    if (key == "s" || key == "S") {
+        saveDraw();
+    }
+}
+
+function saveDraw() {
+    saveCanvas("myCanvas", "jpg");
 }
 
 /*function mouseReleased(){
@@ -97,6 +105,11 @@ $(document).ready(function(){
     });
 
     $("select").change(function () { 
-        paintColor = chooseColor($("#colors").val())    
+        paintColor = chooseColor($("#colors").val());  
+    });
+
+    $("#saveButton").click(function (e) { 
+        e.preventDefault();
+        saveDraw();
     });
 });  
