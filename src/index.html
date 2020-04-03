@@ -5,33 +5,33 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a class="navbar-brand" href="https://processing.org/">
         <img src="../data/icon.png" width="30" height="30" alt="">
         Paint
       </a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="info.html">Info</a>
-          </li>
-        </ul>
-      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="info.html">Info</a>
+        </li>
+      </ul>
     </nav>
     <br>
     <div>
         <div class="row">
-            <div align="center" class="col-sm">
-              <br>
-              <button type="button" id="saveButton" class="btn btn-dark">Save Draw</button>
-            </div>
             <div class="col-sm">
-                <p align="center">Width of pen</p>
+              <input class="form-control" id="saveName" type="text" placeholder="Name of file save">
+            </div>
+            <div align="center" class="col-sm">
+              <button type="button" id="saveButton" class="btn btn-dark">Save Drawings</button>
+            </div>
+            <div class="col-sm" class="width">
+                <p align="center">Brush width</p>
                 <input type="range" class="custom-range" id="sliderWidth" min="2" max="20">
             </div>
             <div class="col-sm">
@@ -59,9 +59,6 @@
                   <option value="red">Red</option>
                 </select>
               </form> 
-            </div>
-            <div class="col-sm">
-                
             </div>
         </div>
     </div>

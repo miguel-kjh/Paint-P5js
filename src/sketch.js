@@ -72,10 +72,27 @@ function keyPressed(){
     if (key == "s" || key == "S") {
         saveDraw();
     }
+
+    if(key == "o" || key == "O"){
+        let aux = int($("#sliderWidth").val())
+        $("#sliderWidth").val(aux + 1);
+        thickness = $("#sliderWidth").val();
+
+    }
+
+    if(key == "l" || key == "L"){
+        let aux = int($("#sliderWidth").val())
+        $("#sliderWidth").val(aux - 1);
+        thickness = $("#sliderWidth").val();
+    }
 }
 
 function saveDraw() {
-    saveCanvas("myCanvas", "jpg");
+    filename = $("#saveName").val();
+    if (filename == "") {
+        filename = "myCanvas"
+    }
+    saveCanvas(filename, "jpg");
 }
 
 /*function mouseReleased(){
@@ -89,9 +106,9 @@ function chooseColor(string) {
         case "blue":
             return color(7,143,243);
         case "red":
-            return color(228,29,29);
+            return color(250,91,91);
         case "white":
-            return color(255,255,255);
+            return color(249,249,249);
         case "gray":
             return color(220);
         default:

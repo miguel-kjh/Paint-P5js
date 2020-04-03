@@ -1,1 +1,17 @@
-/**/
+.jumbo{
+    margin-top: 3%;
+}
+
+.width{
+    margin-top: 4%;
+}
+
+#saveButton{
+    margin-top: 9%;
+    margin-right: 10%;
+}
+
+#saveName{
+    margin-top: 9%;
+    margin-left: 5%;
+}
