@@ -4,10 +4,12 @@ const y = $(document).height();
 let drawings;
 let thickness;
 let paintColor;
+let isDrawing;
 
 function setup() {
     createCanvas(x, y);
     drawings       = [];
+    isDrawing      = false;
     paintColor     = chooseColor();
     thickness      = $("#sliderWidth").val();
 }
@@ -45,6 +47,9 @@ function paint() {
 }
 
 function mousePressed(){
+    if (mouseButton == RIGHT) return;
+
+    isDrawing = true;
     drawings.push({
         "points" : [[mouseX,mouseY]],
         "width"  : thickness,
@@ -56,11 +61,18 @@ function mouseDragged(){
     drawings[drawings.length - 1].points.push([mouseX,mouseY]);
 }
 
+function mouseReleased(){
+    isDrawing = false;
+}
+
 function deleteElemente() {
     drawings.pop();
 }
 
 function keyPressed(){
+
+    if (isDrawing) return;
+
     if (key == "b" || key == "B") {
         deleteElemente();
     }
