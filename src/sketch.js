@@ -107,10 +107,6 @@ function saveDraw() {
     saveCanvas(filename, "jpg");
 }
 
-/*function mouseReleased(){
-    console.log("dejar");
-}*/
-
 function chooseColor(string) {
     switch (string) {
         case "green":

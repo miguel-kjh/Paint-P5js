@@ -15,10 +15,10 @@ Correo: miguel.medina108@alu.ulpgc.es
 5. [Bibliografía](#bibliografía)
 
 ## Introducción
-El objetivo de esta práctica es diseñar una aplicación web parecidad a la aplicación de consola de windows *Paint*, pero haciendo uso de P5js una libreria de JavaScript para usar directivas de dibujos y modelo de objectos propias de processing.
+El objetivo de esta práctica es diseñar una aplicación web parecidas a la aplicación de consola de windows *Paint*, pero haciendo uso de P5js una librería de JavaScript para usar directivas de dibujos y modelo de objetos propias de processing.
 
 ## Dependencias
-Al tratar se de una applicación web, la única dependencia que se necesita para ejecutar el projecto es una **navegador** o cualquier otro capaz de ejcutar html.
+Al tratarse de una aplicación web, la única dependencia que se necesita para ejecutar el proyecto es una **navegador** o cualquier otro capaz de ejecutar html.
 
 ## Implementación
 
@@ -26,13 +26,13 @@ Como se trata de javascript todo el código está orientado a funciones y se ha 
 
 ### Dibujos y JavaScript
 
-Para lograr una efecto similar al Paint original, y poder permitir que el usuario pueda crear culauier dibujo en 2D, se ha planteado el siguiente algoritmo:
-
-* Como la interación usuario-máquina es fundamentalmente con el raton, cada vez que se pulse cilc izquierdo y se mueva el raton se registra una elemento, que esta compuesto por los puntos del raton en el movimineto, un color y la anchura del pincel.Cada vez que el usuario está pintando se crea.
-
+Para lograr una efecto similar al Paint original, y poder permitir que el usuario pueda crear cualquier dibujo en 2D, se ha planteado el siguiente algoritmo:
+ 
+* Como la interacción usuario-máquina es fundamentalmente con el ratón, cada vez que se pulse clic izquierdo y se mueva el ratón se registra una elemento, que está compuesto por los puntos del ratón en el movimiento, un color y la anchura del pincel.Cada vez que el usuario está pintando se crea.
+ 
 * En cada iteración del *draw* se recorren los elementos creado y se pintan.
-
-* Para hacer los dibujos se ha optado por dibujar lineas entre los puntos del ratón recogidos, de esa forma el costo computacional del dibujo es pequeño al no ser necesario ningún proceso de interpolación, y el efecto es muy parecido al del paint original.
+ 
+* Para hacer los dibujos se ha optado por dibujar líneas entre los puntos del ratón recogidos, de esa forma el costo computacional del dibujo es pequeño al no ser necesario ningún proceso de interpolación, y el efecto es muy parecido al del paint original.
 
 ```javaScript
 function paint() {
@@ -95,13 +95,13 @@ Aparte con **JQuery** se ha hecho toda la interfaz html-javascript, el usuario p
 
 ### Html
 
-Existe dos archivos .html en este projecto, el primero es donde se implementa el paint, y donde el usaurio podra:
-
+Existen dos archivos .html en este proyecto, el primero es donde se implementa el paint, y donde el usuario podrá:
+ 
 * Dibujar y borrar sus creaciones.
-
+ 
 * Guardar las nuevas figuras creadas.
-
-* Cambiar tando el grosor del pincel como los colores de este y del fondo.
+ 
+* Cambiar tanto el grosor del pincel como los colores de este y del fondo.
 
 <p align="center">
   <img src="data/index.png" alt="paint">
