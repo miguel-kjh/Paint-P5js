@@ -18,17 +18,17 @@ Correo: miguel.medina108@alu.ulpgc.es
 El objetivo de esta práctica es diseñar una aplicación web parecidas a la aplicación de consola de windows *Paint*, pero haciendo uso de P5js una librería de JavaScript para usar directivas de dibujos y modelo de objetos propias de processing.
 
 ## Dependencias
-Al tratarse de una aplicación web, la única dependencia que se necesita para ejecutar el proyecto es una **navegador** o cualquier otro capaz de ejecutar html.
+Al tratarse de una aplicación web, la única dependencia que se necesita para ejecutar el proyecto es un **navegador** o cualquier otro programa capaz de ejecutar html.
 
 ## Implementación
 
-Como se trata de javascript todo el código está orientado a funciones y se ha hecho uso de framework **JQuery** para que la integración de html con javascript sea más sencilla.
+Como se trata de javascript todo el código está orientado a funciones y se ha hecho uso del framework **JQuery** para que la integración de html con javascript sea más sencilla.
 
 ### Dibujos y JavaScript
 
 Para lograr una efecto similar al Paint original, y poder permitir que el usuario pueda crear cualquier dibujo en 2D, se ha planteado el siguiente algoritmo:
  
-* Como la interacción usuario-máquina es fundamentalmente con el ratón, cada vez que se pulse clic izquierdo y se mueva el ratón se registra una elemento, que está compuesto por los puntos del ratón en el movimiento, un color y la anchura del pincel.Cada vez que el usuario está pintando se crea.
+* Como la interacción usuario-máquina es fundamentalmente con el ratón, cada vez que se pulse clic izquierdo y se mueva el ratón se registra un elemento, que está compuesto por los puntos del ratón en el movimiento, un color y la anchura del pincel.
  
 * En cada iteración del *draw* se recorren los elementos creado y se pintan.
  
@@ -110,7 +110,7 @@ Existen dos archivos .html en este proyecto, el primero es donde se implementa e
   Figura 1: Imagen de muestra del index.html
 </p>
 
-El segundo donde se expone una explicación del trabajo y una guia por los atajos de teclado:
+El segundo donde se expone una explicación del trabajo y una guia de los atajos de teclado:
 
 <p align="center">
   <img src="data/info.png" alt="Información">
